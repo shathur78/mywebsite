@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ST VIDEO EDITZ - Professional Video Editing Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+            overflow-x: hidden;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #1e40af 0%, #7c3aed 50%, #c026d3 100%);
+        }
+        
+        .service-card {
+            transform-style: preserve-3d;
+            transition: all 0.5s ease;
+            perspective: 1000px;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px) rotateX(5deg);
+            box-shadow: 0 25px 50px -12px rgba(124, 58, 237, 0.5);
+        }
+        
+        .floating {
+            animation: floating 6s ease-in-out infinite;
+        }
+        
+        .floating-2 {
+            animation: floating 4s ease-in-out infinite 1s;
+        }
+        
+        .floating-3 {
+            animation: floating 5s ease-in-out infinite 1s;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .glow {
+            box-shadow: 0 0 20px rgba(124, 58, 237, 0.7);
+        }
+        
+        .review-card {
+            transform-style: preserve-3d;
+            transition: all 0.3s ease;
+        }
+        
+        .review-card:hover {
+            transform: scale(1.05) rotateY(5deg);
+        }
+        
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        #nav-time {
+            background: rgba(255,255,255,0.1);
+            border-radius: 0.375rem;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-opacity-90 backdrop-blur-md bg-gray-900 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <a href="scss" class="text-2xl font-bold text-white"><span class="text-purple-500">ST</span> VIDEO EDITZ</a>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-6">
+                        <div class="flex items-baseline space-x-4">
+                            <a href="#home" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all duration-300">Home</a>
+                            <a href="#services" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all duration-300">Services</a>
+                            <a href="#portfolio" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all duration-300">Portfolio</a>
+                            <a href="#reviews" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all duration-300">Reviews</a>
+                            <a href="#contact" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all duration-300">Contact</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-gray-300 hover:text-white focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900 bg-opacity-95">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="#services" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Services</a>
+                <a href="#portfolio" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Portfolio</a>
+                <a href="#reviews" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Reviews</a>
+                <a href="#contact" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient pt-24 pb-20 md:pt-32 md:pb-28 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full opacity-10">
+            <div class="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-purple-400 filter blur-3xl opacity-70"></div>
+            <div class="absolute top-1/3 right-1/4 w-72 h-72 rounded-full bg-blue-400 filter blur-3xl opacity-70"></div>
+            <div class="absolute bottom-1/4 right-1/3 w-80 h-80 rounded-full bg-indigo-400 filter blur-3xl opacity-70"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="md:flex items-center justify-between">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6">
+                        Transform Your <span class="text-purple-300">Videos</span> Into Masterpieces
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-200 mb-8">
+                        Professional video editing services that bring your vision to life with stunning visuals and cinematic effects.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#contact" class="px-8 py-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-full transition-all duration-300 transform hover:scale-105">
+                            Get Started
+                        </a>
+                        <a href="#portfolio" class="px-8 py-3 border-2 border-white text-white font-semibold rounded-full transition-all duration-300 transform hover:scale-105 hover:bg-white hover:text-gray-900">
+                            View Portfolio
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 relative">
+                    <div class="relative max-w-lg mx-auto">
+                        <video autoplay loop playsinline controls class="rounded-2xl shadow-2xl floating border-4 border-white border-opacity-20 w-full" allowfullscreen>
+                            <source src="C:\Users\sharj\Downloads\Leo ft. Powerhouse _ Thalapathy Vijay _ Coolie _ Lokesh Kanakaraj _ Anirudh.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-purple-500 rounded-xl shadow-xl floating-2 transform rotate-12 hidden md:block"></div>
+                        <div class="absolute -top-6 -right-6 w-28 h-28 bg-blue-500 rounded-xl shadow-xl floating-3 transform -rotate-12 hidden md:block"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Our <span class="text-purple-500">Premium</span> Services</h2>
+                <p class="text-lg text-gray-400 max-w-2xl mx-auto">
+                    We offer a wide range of professional video editing services tailored to your needs.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-700 hover:border-purple-500">
+                    <div class="w-16 h-16 mb-6 rounded-lg bg-purple-600 flex items-center justify-center text-white text-2xl">
+                        <i class="fas fa-film"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Cinematic Editing</h3>
+                    <div class="flex items-center mb-4">
+                        <span class="text-2xl font-bold text-purple-400">₹999</span>
+                        <span class="ml-2 text-sm text-gray-400 line-through">₹1499</span>
+                        <span class="ml-2 text-sm text-green-400">33% OFF</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        Hollywood-style editing with dramatic transitions, color grading, and visual effects that make your videos stand out.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-gray-700 rounded-full text-xs text-purple-300">Color Grading</span>
+                        <span class="px-3 py-1 bg-gray-700 rounded-full text-xs text-purple-300">Transitions</span>
+                        <span class="px-3 py-1 bg-gray-700 rounded-full text-xs text-purple-300">Effects</span>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-700 hover:border-purple-500">
+                    <div class="w-16 h-16 mb-6 rounded-lg bg-blue-600 flex items-center justify-center text-white text-2xl">
+                        <i class="fas fa-ad"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Commercial Ads</h3>
+                    <div class="flex items-center mb-4">
+                        <span class="text-2xl font-bold text-blue-400">₹1499</span>
+                        <span class="ml-2 text-sm text-gray-400 line-through">₹1999</span>
+                        <span class="ml-2 text-sm text-green-400">25% OFF</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        Attention-grabbing advertisements designed to convert viewers into customers with compelling storytelling.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <a href="https://rzp.io/rzp/ZyVtexx" target="_blank" class="px-3 py-1 bg-gray-700 rounded-full text-xs text-blue-300 cursor-pointer hover:bg-blue-800 transition-colors">Buy</a>
+                    </div>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-700 hover:border-purple-500">
+                    <div class="w-16 h-16 mb-6 rounded-lg bg-pink-600 flex items-center justify-center text-white text-2xl">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Social Media Content</h3>
+                    <div class="flex items-center mb-4">
+                        <span class="text-2xl font-bold text-pink-400">₹799</span>
+                        <span class="ml-2 text-sm text-gray-400 line-through">₹1199</span>
+                        <span class="ml-2 text-sm text-green-400">33% OFF</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        Optimized videos for Instagram, TikTok, YouTube Shorts and other platforms designed to maximize engagement.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-gray-700 rounded-full text-xs text-pink-300">Vertical Format</span>
+                        <span class="px-3 py-1 bg-gray-700 rounded-full text-xs text-pink-300">Captions</span>
+                        <span class="px-3 py-1 bg-gray-700 rounded-full text-xs text-pink-300">Trending</span>
+                    </div>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="service-card bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-700 hover:border-purple-500">
+                    <div class="w-16 h-16 mb-6 rounded-lg bg-green-600 flex items-center justify-center text-white text-2xl">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Educational Videos</h3>
+                    <div class="flex items-center mb-4">
+                        <span class="text-2xl font-bold text-green-400">₹1299</span>
+                        <span class="ml-2 text-sm text-gray-400 line-through">₹1799</span>
+                        <span class="ml-2 text-sm text-green-400">28% OFF</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        Clear, concise educational content with animations, graphics, and professional narration for maximum learning impact.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-gray-700 rounded-full text-xs text-green-300">Animations</span>
+                        <span class="px-3 py-1 bg-gray-700 rounded-full text-xs text-green-300">Graphics</span>
+                        <span class="px-3 py-1 bg-gray-700 rounded-full text-xs text-green-300">Explainer</span>
+                    </div>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="service-card bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-700 hover:border-purple-500">
+                    <div class="w-16 h-16 mb-6 rounded-lg bg-yellow-600 flex items-center justify-center text-white text-2xl">
+                        <i class="fas fa-image"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Social Media Poster Design</h3>
+                    <div class="flex items-center mb-4">
+                        <span class="text-2xl font-bold text-yellow-400">₹499</span>
+                        <span class="ml-2 text-sm text-gray-400 line-through">₹799</span>
+                        <span class="ml-2 text-sm text-green-400">38% OFF</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        Eye-catching social media posters designed to increase engagement and brand awareness on all platforms.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-gray-700 rounded-full text-xs text-yellow-300">Instagram</span>
+                        <span class="px-3 py-1 bg-gray-700 rounded-full text-xs text-yellow-300">Facebook</span>
+                        <span class="px-3 py-1 bg-gray-700 rounded-full text-xs text-yellow-300">Twitter</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Our <span class="text-purple-500">Showcase</span></h2>
+                <p class="text-lg text-gray-400 max-w-2xl mx-auto">
+                    Explore our latest projects and see the quality of our work.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Portfolio Item 1 -->
+                <div class="group relative overflow-hidden rounded-xl shadow-xl transform transition-all duration-500 hover:scale-105">
+                    <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" 
+                         alt="Commercial Project" 
+                         class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <div>
+                            <h3 class="text-white text-xl font-bold mb-2">Commercial ADS</h3>
+                            <p class="text-gray-300">High-energy sports commercial with dynamic editing</p>
+                            <button class="mt-3 px-4 py-2 bg-purple-600 text-white rounded-full text-sm font-medium hover:bg-purple-700 transition-colors">
+                                View Project
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 3 -->
+                <div class="group relative overflow-hidden rounded-xl shadow-xl transform transition-all duration-500 hover:scale-105">
+                    <img src="https://images.unsplash.com/photo-1579389083078-4e7018379f7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Corporate Video" 
+                         class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <div>
+                            <h3 class="text-white text-xl font-bold mb-2">Corporate Brand Video</h3>
+                            <p class="text-gray-300">Professional corporate branding video</p>
+                            <button class="mt-3 px-4 py-2 bg-purple-600 text-white rounded-full text-sm font-medium hover:bg-purple-700 transition-colors">
+                                View Project
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button onclick="openProjectsModal()" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-purple-600 hover:bg-purple-700 transition-colors">
+                    View All Projects
+                    <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="py-20 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Client <span class="text-purple-500">Testimonials</span></h2>
+                <p class="text-lg text-gray-400 max-w-2xl mx-auto">
+                    Don't just take our word for it. Here's what our clients say about us.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="review-card bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-700 hover:border-purple-500">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <alt="Sarah Johnson" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white">Ajay Kumar</h4>
+                            <div class="flex text-yellow-400 text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic mb-4">
+                        "ST VIDEO EDITZ transformed our corporate training videos into engaging content that our employees actually want to watch. The editing was flawless and they delivered ahead of schedule!"
+                    </p>
+                    <div class="text-sm text-gray-500">Marketing Director, TechCorp</div>
+                </div>
+                
+                <!-- Review 2 -->
+                <div class="review-card bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-700 hover:border-purple-500">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <alt="Michael Rodriguez" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white">Sha</h4>
+                            <div class="flex text-yellow-400 text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic mb-4">
+                        "The music video they edited for my band went viral! Their creative input and technical skills took our vision to a whole new level. Will definitely work with them again."
+                    </p>
+                    <div class="text-sm text-gray-500">Lead Singer, Midnight Echo</div>
+                </div>
+                
+                <!-- Review 3 -->
+                <div class="review-card bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-700 hover:border-purple-500">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <alt="Emily Chen" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white">Jordan</h4>
+                            <div class="flex text-yellow-400 text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic mb-4">
+                        "As a small business owner, I needed professional product videos but didn't have a big budget. ST VIDEO EDITZ delivered Hollywood-quality work at an affordable price. My sales increased by 30%!"
+                    </p>
+                    <div class="text-sm text-gray-500">Founder, Bloom Cosmetics</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-purple-900 bg-opacity-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="p-4">
+                    <div class="text-4xl md:text-5xl font-bold text-white mb-2">5+</div>
+                    <div class="text-gray-300 uppercase text-sm tracking-wider">Projects Completed</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-4xl md:text-5xl font-bold text-white mb-2">43%</div>
+                    <div class="text-gray-300 uppercase text-sm tracking-wider">Client Satisfaction</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-4xl md:text-5xl font-bold text-white mb-2">2+</div>
+                    <div class="text-gray-300 uppercase text-sm tracking-wider">Countries Served</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-4xl md:text-5xl font-bold text-white mb-2">24/7</div>
+                    <div class="text-gray-300 uppercase text-sm tracking-wider">Support Available</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex items-center justify-between">
+                <div class="w-full text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to <span class="text-purple-500">Elevate</span> Your Content?</h2>
+                    <p class="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
+                        discuss your project now with us!
+                    </p>
+                    <div class="space-y-4 max-w-md mx-auto text-center">
+                        <div class="flex flex-col items-center space-y-4">
+                            <a href="https://wa.me/919626229135" class="w-16 h-16 rounded-full bg-green-600 flex items-center justify-center text-white text-2xl mx-auto mb-4 hover:bg-green-700 transition-colors">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <h4 class="text-lg font-medium text-white">WhatsApp us</h4>
+                        </div>
+
+                        <div class="flex flex-col items-center space-y-4">
+                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=videoediting0708@gmail.com&su=Video Editing Inquiry" class="w-16 h-16 rounded-full bg-red-600 flex items-center justify-center text-white text-2xl mx-auto mb-4 hover:bg-red-700 transition-colors">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                            <h4 class="text-lg font-medium text-white">Email us</h4>
+                        </div>
+                        
+                        <div class="flex flex-col items-center space-y-4">
+                            <div class="w-16 h-16 rounded-full bg-green-600 flex items-center justify-center text-white text-2xl mx-auto mb-4">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <h4 class="text-lg font-medium text-white">Working Hours</h4>
+                            <p class="text-green-300">Mon-Fri: 9AM - 6PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-800 pt-12 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex md:items-center md:justify-between">
+                <div class="flex justify-center md:justify-start mb-8 md:mb-0">
+                    <div>
+                        <h1 class="text-2xl font-bold text-white"><span class="text-purple-500">ST</span> VIDEO EDITZ</h1>
+                        <p class="text-gray-500 mt-2">Professional Video Editing Services</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-8 sm:grid-cols-3">
+                    <div>
+                        <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase mb-4">Company</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Portfolio</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase mb-4">Legal</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Cookie Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm text-center md:text-left">
+                    &copy; SINCE 2024. All rights reserved.
+                </p>
+                <div class="mt-4 md:mt-0 flex space-x-6">
+                    <a href="https://www.instagram.com/stvideoeditz0708/" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://youtube.com/@stvideoeditz?si=CxNksG0d4e06FrZx" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 bg-purple-600 rounded-full shadow-lg flex items-center justify-center text-white opacity-0 invisible transition-all duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Time and date display
+        function updateTime() {
+            const now = new Date();
+            const timeElement = document.getElementById('current-time');
+            const dateElement = document.getElementById('current-date');
+            
+            const options = { 
+                hour: '2-digit', 
+                minute: '2-digit', 
+                second: '2-digit',
+                hour12: true 
+            };
+            timeElement.textContent = now.toLocaleTimeString('en-US', options);
+        }
+        
+        updateTime();
+        setInterval(updateTime, 1000);
+        
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+        
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                if (!document.getElementById('mobile-menu').classList.contains('hidden')) {
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+        
+        // Check if returning from payment page
+        window.addEventListener('load', function() {
+            if (sessionStorage.getItem('prevPage')) {
+                window.location.href = sessionStorage.getItem('prevPage');
+                sessionStorage.removeItem('prevPage');
+            }
+        });
+
+        // Animation for service cards on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        document.querySelectorAll('.service-card, .review-card').forEach(card => {
+            card.style.opacity = 0;
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(card);
+        });
+    </script>
+
+    <!-- Projects Modal -->
+    <div id="projects-modal" class="fixed inset-0 z-50 hidden overflow-y-auto" aria-modal="true" role="dialog">
+        <div class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 transition-opacity" aria-hidden="true">
+                <div class="absolute inset-0 bg-gray-900 opacity-90"></div>
+            </div>
+            
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+            
+            <div class="inline-block align-bottom bg-gray-800 rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-6xl sm:w-full">
+                <div class="bg-gray-800 px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                    <div class="sm:flex sm:items-start">
+                        <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left w-full">
+                            <h3 class="text-2xl leading-6 font-bold text-white mb-6">
+                                Our Complete Portfolio
+                            </h3>
+                            <div class="mt-2">
+                                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                    <!-- Additional Project 1 -->
+                                    <div class="group relative overflow-hidden rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105">
+                                        <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1459&q=80" 
+                                             alt="Movie Trailer" 
+                                             class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                                            <div>
+                                                <h3 class="text-white text-xl font-bold mb-2">Movie Trailer</h3>
+                                                <p class="text-gray-300">Action-packed movie trailer with dramatic effects</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Additional Project 2 -->
+                                    <div class="group relative overflow-hidden rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105">
+                                        <img src="D:\WEBSITE\OIP (1).webp" 
+                                             alt="Sports Highlights" 
+                                             class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                                            <div>
+                                                <h3 class="text-white text-xl font-bold mb-2">Sports Highlights</h3>
+                                                <p class="text-gray-300">Dynamic sports compilation with slow-motion effects</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Additional Project 3 -->
+                                    <div class="group relative overflow-hidden rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105">
+                                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                                             alt="Tech Product Demo" 
+                                             class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                                            <div>
+                                                <h3 class="text-white text-xl font-bold mb-2">Tech Product Demo</h3>
+                                                <p class="text-gray-300">Clean, professional product demonstration video</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Additional Project 4 -->
+                                    <div class="group relative overflow-hidden rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105">
+                                        <img src="https://i.pinimg.com/originals/15/41/93/1541930824c8e226b34f496105cb9a19.jpg" 
+                                             alt="Wedding Video" 
+                                             class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                                            <div>
+                                                <h3 class="text-white text-xl font-bold mb-2">Wedding Video</h3>
+                                                <p class="text-gray-300">Emotional wedding highlight film</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Additional Project 5 -->
+                                    <div class="group relative overflow-hidden rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105">
+                                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                                             alt="Fitness Program" 
+                                             class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                                            <div>
+                                                <h3 class="text-white text-xl font-bold mb-2">Fitness Program</h3>
+                                                <p class="text-gray-300">High-energy workout video series</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Additional Project 6 -->
+                                    <div class="group relative overflow-hidden rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105">
+                                        <img src="https://images.unsplash.com/photo-1503220317375-aaad61436b1b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                                             alt="Travel Vlog" 
+                                             class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                                            <div>
+                                                <h3 class="text-white text-xl font-bold mb-2">Travel Vlog</h3>
+                                                <p class="text-gray-300">Cinematic travel documentary series</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-800 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+                    <button onclick="closeProjectsModal()" type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-purple-600 text-base font-medium text-white hover:bg-purple-700 focus:outline-none sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Projects Modal functions
+        function openProjectsModal() {
+            const modal = document.getElementById('projects-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('block');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeProjectsModal() {
+            const modal = document.getElementById('projects-modal');
+            modal.classList.remove('block');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Close modal when clicking outside or escape key
+        document.getElementById('projects-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeProjectsModal();
+            }
+        });
+        
+        document.addEventListener('keydown', function(e) {
+            const modal = document.getElementById('projects-modal');
+            if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                closeProjectsModal();
+            }
+        });
+    </script>
+</body>
+</html>
